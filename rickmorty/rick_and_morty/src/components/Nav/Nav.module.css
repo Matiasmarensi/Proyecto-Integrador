@@ -1,0 +1,54 @@
+.container{
+width: 100%;
+   display:grid;
+   position: relative;
+    /* alinea los elementos en los extremos del contenedor */
+  align-items: center;
+   height: 200px;
+    
+   opacity: .9;
+   background-color: #80ff00dc;
+  box-shadow: 0 0 40px #80ff00;
+   z-index: 1;
+   position: fixed;
+   
+}
+
+.imagen{
+   
+   max-width: 600px;
+   max-height: 140px;
+   
+}
+
+  
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+.container3{
+   margin-left: 20px !important;;  
+   margin-top: auto !important;
+   padding: 20px;
+   align-items: center;
+    position: absolute;
+  margin: auto;
+   
+ 
+      font-family: 'Creepster', cursive;
+  
+ 
+   
+
+  cursor: pointer;
+   
+  font-size: 35px;
+  margin: 5px;
+  padding-top: 20px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  
+}
+.container3 p{
+   
+   color: white;;
+}

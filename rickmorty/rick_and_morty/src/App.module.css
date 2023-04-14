@@ -1,0 +1,35 @@
+.container {
+  
+    
+    text-align: center;
+   
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5236376f-305d-42da-8e2d-48455360a090/de24jbm-76cb9ff5-f3be-4493-9aa1-7aeb6e1efd21.png/v1/fill/w_1280,h_720,q_80,strp/desktop_wallpaper_4k_rick_and_morty_by_jorgehardt_de24jbm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvNTIzNjM3NmYtMzA1ZC00MmRhLThlMmQtNDg0NTUzNjBhMDkwXC9kZTI0amJtLTc2Y2I5ZmY1LWYzYmUtNDQ5My05YWExLTdhZWI2ZTFlZmQyMS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.lVih8_MzWLdXKAVEOGFReaoCTMpm1Int-NRaZqpM6rM');
+    
+    background-size:cover;
+        background-attachment: fixed;
+   padding-top: 1px;
+        min-height:100vh;
+      
+  
+}
+/* Estilos para la barra de scroll */
+::-webkit-scrollbar {
+    width: 20px; /* Ancho de la barra */
+    background-color: #4ef037; /* Color de fondo de la barra */
+  }
+
+  /* Estilos para el pulgar de la barra */
+  ::-webkit-scrollbar-thumb {
+    background-color: #128494; /* Color del pulgar */
+    border-radius: 5px; /* Radio de borde del pulgar */
+  }
+  
+  /* Estilos para el pulgar cuando se le pasa el mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #128494; /* Color del pulgar */
+  }
+  
+  /* Estilos para la esquina inferior derecha */
+  ::-webkit-scrollbar-corner {
+    background-color: #128494; /* Color de fondo */
+  }
