@@ -22,7 +22,7 @@ function App() {
         // if (data.id) {
         //   !characters.some((obj) => JSON.stringify(obj) === JSON.stringify(data))
         //     ? setCharacters((oldChars) => [...oldChars, data])
-        //     : window.alert("lenny corneta");
+        //     : window.alert(");
         // } else {
         //   window.alert("No hay personajes con ese ID");
         // }
