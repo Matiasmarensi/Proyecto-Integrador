@@ -1,34 +1,39 @@
 import { ADD_FAVORITES, ORDER, FILTER } from "./actions";
 import { DELETE_FAVORITES } from "./actions";
+
 const initialState = {
   myFavorites: [],
   allCharacters: [],
 };
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_FAVORITES:
-      const isDuplicate = state.myFavorites.find((char) => char.id === action.payload.id);
+    // case ADD_FAVORITES:
+    //   const isDuplicate = state.myFavorites.find((char) => char.id === action.payload.id);
 
-      if (isDuplicate) {
-        return { ...state };
-      } else {
-        return {
-          ...state,
-          myFavorites: [...state.myFavorites, action.payload],
-          allCharacters: [...state.allCharacters, action.payload],
-        };
-      }
+    //   if (isDuplicate) {
+    //     return { ...state };
+    //   } else {
+    //     return {
+    //       ...state,
+    //       myFavorites: [...state.myFavorites, action.payload],
+    //       allCharacters: [...state.allCharacters, action.payload],
+    //     };
+    //   }
 
     // return {
     //   ...state,
     //   myFavorites: [...state.myFavorites, action.payload],
     //   allCharacters: [...state.allCharacters, action.payload],
     // };
+    case ADD_FAVORITES:
+      return { ...state, myFavorites: action.payload, allCharacters: action.payload };
     case DELETE_FAVORITES:
-      return {
-        ...state,
-        myFavorites: state.myFavorites.filter((char) => char.id !== action.payload),
-      };
+      return { ...state, myFavorites: action.payload };
+    // case DELETE_FAVORITES:
+    //   return {
+    //     ...state,
+    //     myFavorites: state.myFavorites.filter((char) => char.id !== action.payload),
+    //   };
     case FILTER:
       const { allCharacters } = state;
       const filtered = allCharacters.filter((char) => char.gender === action.payload);

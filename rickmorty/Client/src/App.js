@@ -12,29 +12,34 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Favorites from "./components/Favorites/Favorites";
+import axios from "axios";
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
-  const onSearch = (id) => {
-    fetch(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        // if (data.id) {
-        //   !characters.some((obj) => JSON.stringify(obj) === JSON.stringify(data))
-        //     ? setCharacters((oldChars) => [...oldChars, data])
-        //     : window.alert(");
-        // } else {
-        //   window.alert("No hay personajes con ese ID");
-        // }
-        if (data.name) {
-          const characterExists = characters.some((char) => char.id === data.id);
-          if (!characterExists) {
-            setCharacters((oldChars) => [...oldChars, data]);
-          } else {
-            window.alert("No hay personajes con ese ID");
+  const onSearch = async (id) => {
+    try {
+      await fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // if (data.id) {
+          //   !characters.some((obj) => JSON.stringify(obj) === JSON.stringify(data))
+          //     ? setCharacters((oldChars) => [...oldChars, data])
+          //     : window.alert(");
+          // } else {
+          //   window.alert("No hay personajes con ese ID");
+          // }
+          if (data.name) {
+            const characterExists = characters.some((char) => char.id === data.id);
+            if (!characterExists) {
+              setCharacters((oldChars) => [...oldChars, data]);
+            } else {
+              window.alert("El personaje ya existe");
+            }
           }
-        }
-      });
+        });
+    } catch (e) {
+      console.log("catch error");
+    }
   };
   const onClose = (characterId) => {
     setCharacters((chars) => {
@@ -52,12 +57,25 @@ function App() {
   const username = "ejemplo@gmail.com";
   const password = "123456";
 
-  function login(userData) {
-    if (userData.password === password && userData.username === username) {
-      setAccess(true);
-      navigate("/home");
+  async function login(userData) {
+    const { username, password } = userData;
+    console.log(username, password);
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    try {
+      const { data } = await axios.get(`${URL}?email=${username}&password=${password}`);
+      const { access } = data;
+      setAccess(data);
+      access && navigate("/home");
+    } catch (err) {
+      console.log("login error");
     }
   }
+  // function login(userData) {
+  //   if (userData.password === password && userData.username === username) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //   }
+  // }
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
