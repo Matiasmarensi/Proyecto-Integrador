@@ -60,9 +60,9 @@ function App() {
   async function login(userData) {
     const { username, password } = userData;
     console.log(username, password);
-    const URL = "http://localhost:3001/rickandmorty/login/";
+    const URL = "http://localhost:3001/rickandmorty/login";
     try {
-      const { data } = await axios.get(`${URL}?email=${username}&password=${password}`);
+      const { data } = await axios.get(`${URL}?username=${username}&password=${password}`);
       const { access } = data;
       setAccess(data);
       access && navigate("/home");

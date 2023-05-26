@@ -11,7 +11,8 @@ export const FILTER = "FILTER";
 //   };
 // };
 export const deleteFavorite = (id) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav/" + id;
+  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
+  console.log(endpoint);
   return async (dispatch) => {
     try {
       const { data } = await axios.delete(endpoint);
@@ -20,7 +21,7 @@ export const deleteFavorite = (id) => {
         payload: data,
       });
     } catch (e) {
-      console.log("error");
+      console.log(e.message);
     }
   };
 };
@@ -48,7 +49,8 @@ export const addFavorite = (character) => {
         payload: data,
       });
     } catch (e) {
-      console.log("error");
+      console.log(e.response.data);
+      console.log(e.message);
     }
   };
 };

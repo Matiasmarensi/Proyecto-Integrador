@@ -41,6 +41,8 @@ const Favorites = (props) => {
          {props.myFavorites.map((personaje, index) => (
          
          <Card
+         origin={personaje.origin}
+           status={personaje.status}
                   key={index}
          image={personaje.image}
          name={personaje.name}
