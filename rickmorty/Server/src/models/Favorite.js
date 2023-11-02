@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
     "Favorite",
     {
       id: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
       },
