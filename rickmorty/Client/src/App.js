@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Favorites from "./components/Favorites/Favorites";
 import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001";
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
@@ -60,14 +61,16 @@ function App() {
   async function login(userData) {
     const { username, password } = userData;
     console.log(username, password);
+
     const URL = "http://localhost:3001/rickandmorty/login";
     try {
       const { data } = await axios.get(`${URL}?username=${username}&password=${password}`);
+      console.log(data);
       const { access } = data;
       setAccess(data);
       access && navigate("/home");
     } catch (err) {
-      console.log("login error");
+      console.log(err.message);
     }
   }
   // function login(userData) {
@@ -77,7 +80,7 @@ function App() {
   //   }
   // }
   useEffect(() => {
-    !access && navigate("/");
+    !access && navigate("/home");
   }, [access]);
 
   return (

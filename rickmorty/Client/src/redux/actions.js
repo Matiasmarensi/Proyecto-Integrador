@@ -3,6 +3,7 @@ export const ADD_FAVORITES = "addFavorites";
 export const DELETE_FAVORITES = "DELETE_FAVORITES";
 export const ORDER = "ORDER";
 export const FILTER = "FILTER";
+axios.defaults.baseURL = "http://localhost:3001";
 
 // export const deleteFavorite = (id) => {
 //   return {
@@ -11,11 +12,9 @@ export const FILTER = "FILTER";
 //   };
 // };
 export const deleteFavorite = (id) => {
-  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
-  console.log(endpoint);
   return async (dispatch) => {
     try {
-      const { data } = await axios.delete(endpoint);
+      const { data } = await axios.delete(`/rickandmorty/fav/${id}`);
       return dispatch({
         type: DELETE_FAVORITES,
         payload: data,
@@ -40,10 +39,9 @@ export const orderCards = (id) => {
 
 // ACTION | addFav
 export const addFavorite = (character) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
   return async (dispatch) => {
     try {
-      const { data } = await axios.post(endpoint, character);
+      const { data } = await axios.post("/rickandmorty/fav", character);
       return dispatch({
         type: ADD_FAVORITES,
         payload: data,

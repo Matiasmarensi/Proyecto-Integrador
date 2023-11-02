@@ -2,6 +2,8 @@ const { User } = require("../DB_connection");
 
 const login = async (req, res) => {
   const { username, password } = req.query;
+  console.log(username, password);
+
   try {
     if (!username || !password) {
       return res.status(400).json({ message: "Faltan datos" });
