@@ -3,7 +3,7 @@ export const ADD_FAVORITES = "addFavorites";
 export const DELETE_FAVORITES = "DELETE_FAVORITES";
 export const ORDER = "ORDER";
 export const FILTER = "FILTER";
-axios.defaults.baseURL = "https://proyecto-integrador-production-fa70.up.railway.app/";
+axios.defaults.baseURL = "https://proyecto-integrador-production-fa70.up.railway.app";
 
 // export const deleteFavorite = (id) => {
 //   return {

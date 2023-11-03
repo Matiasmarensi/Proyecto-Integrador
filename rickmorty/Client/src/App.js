@@ -13,13 +13,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Favorites from "./components/Favorites/Favorites";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://proyecto-integrador-production-fa70.up.railway.app";
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
   const onSearch = async (id) => {
     try {
-      await fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+      await fetch(`/${id}`)
         .then((response) => response.json())
         .then((data) => {
           // if (data.id) {
