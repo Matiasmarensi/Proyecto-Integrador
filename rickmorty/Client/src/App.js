@@ -19,7 +19,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const onSearch = async (id) => {
     try {
-      await fetch(`http://proyecto-integrador-production-fa70.up.railway.app/rickandmorty/character/${id}`)
+      await fetch(`https://proyecto-integrador-production-fa70.up.railway.app/rickandmorty/character/${id}`)
         .then((response) => response.json())
 
         .then((data) => {
