@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Favorites from "./components/Favorites/Favorites";
 import axios from "axios";
-axios.defaults.baseURL = "https://proyecto-integrador-production-fa70.up.railway.app";
+axios.defaults.baseURL = "proyecto-integrador-production-fa70.up.railway.app/";
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
@@ -39,7 +39,7 @@ function App() {
           }
         });
     } catch (e) {
-      console.log("catch error");
+      console.log(e.message);
     }
   };
   const onClose = (characterId) => {
