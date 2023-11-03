@@ -13,14 +13,15 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Favorites from "./components/Favorites/Favorites";
 import axios from "axios";
-axios.defaults.baseURL = "proyecto-integrador-production-fa70.up.railway.app/";
+
 function App() {
   const location = useLocation();
   const [characters, setCharacters] = useState([]);
   const onSearch = async (id) => {
     try {
-      await fetch(`/${id}`)
+      await fetch(`http://proyecto-integrador-production-fa70.up.railway.app/rickandmorty/character/${id}`)
         .then((response) => response.json())
+
         .then((data) => {
           // if (data.id) {
           //   !characters.some((obj) => JSON.stringify(obj) === JSON.stringify(data))
@@ -29,6 +30,7 @@ function App() {
           // } else {
           //   window.alert("No hay personajes con ese ID");
           // }
+
           if (data.name) {
             const characterExists = characters.some((char) => char.id === data.id);
             if (!characterExists) {
