@@ -39,7 +39,7 @@ function App() {
           }
         });
     } catch (e) {
-      console.log(e.message);
+      console.log(e);
     }
   };
   const onClose = (characterId) => {

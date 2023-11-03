@@ -20,7 +20,7 @@ export const deleteFavorite = (id) => {
         payload: data,
       });
     } catch (e) {
-      console.log(e.message);
+      console.log(e);
     }
   };
 };
