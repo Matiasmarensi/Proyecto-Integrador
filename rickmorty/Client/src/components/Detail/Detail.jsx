@@ -18,7 +18,7 @@
             const [character,setCharacter] = useState({});
             
             useEffect(() => {
-                fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+                fetch(`https://proyecto-integrador-production-fa70.up.railway.app/rickandmorty/character/${id}`)
                   .then((response) => response.json())
               .then((char) => {
                 if (char.name) {
